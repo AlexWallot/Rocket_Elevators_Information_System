@@ -1,0 +1,28 @@
+%footer#footer
+  .container
+    .row
+      / col #1
+      .col-md-8
+        %h3.letter-spacing-1 WHY US?
+        / Small Description
+        %p
+          We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
+        %h2 (418) 555-1234
+      / /col #1
+      / col #2
+      .col-md-4
+        %h3.letter-spacing-1 KEEP IN TOUCH
+        / Newsletter Form
+        %p Subscribe to Our Newsletter to get Important News  Offers
+        %form.validate{:action => "php/newsletter.php", "data-success" => "Subscribed! Thank you!", "data-toastr-position" => "bottom-right", :method => "post"}
+          .input-group
+            %span.input-group-addon
+              %i.fa.fa-envelope
+            %input#email.form-control.required{:name => "email", :placeholder => "Enter your Email", :type => "email"}
+              %span.input-group-btn
+                %button.btn.btn-danger{:type => "submit"} Subscribe
+          / /Newsletter Form
+        / /col #2
+    .copyright
+      .container
+        All Rights Reserved, Rocket Elevators LTD

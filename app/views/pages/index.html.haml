@@ -1,0 +1,613 @@
+!!!
+%html{:lang => "en"}
+  %body.smoothscroll.enable-animation
+    / SLIDE TOP
+    #slidetop
+      .container
+        .row
+          .col-md-4
+            %h6
+              %i.icon-heart
+              WHY ROCKET ELEVATORS?
+            %p We have the conviction that we create the most innovative and reliable products on the market. Contact us today for any questions you might have.
+          .col-md-4
+            %h6
+              %i.icon-envelope
+              CONTACT INFO
+            %ul.list-unstyled
+              %li
+                %b Address:
+                Address: 418-725 Boulevard Lebourgneuf,
+                %br/
+                Quebec City - QC, G2J 0C4
+                %br/
+                Canada
+              %li
+                %b Phone:
+                (418) 555-1234
+              %li
+                %b Email:
+                %a{:href => "mailto:info@codeboxx.biz"} info@codeboxx.biz
+      %a.slidetop-toggle{:href => "#"}
+        / toggle button
+    / /SLIDE TOP
+    / wrapper
+    #wrapper
+      #header.navbar-toggleable-md.sticky.header-md.clearfix
+        / TOP NAV
+        %header#topNav
+          .container
+            / Mobile Menu Button
+            %button.btn.btn-mobile{"data-target" => ".nav-main-collapse", "data-toggle" => "collapse"}
+              %i.fa.fa-bars
+            / Logo
+            / scrollTo
+            %a.logo.float-left.scrollTo{:href => "#top"}
+              %img{:alt => "", :src => "assets/images/_rocket/R2.png"}/
+            / Top Nav
+            .navbar-collapse.collapse.float-right.nav-main-collapse.submenu-dark
+              %nav.nav-main
+                %ul#topMain.nav.nav-pills.nav-main.nav-onepage
+                  %li
+                    / HOME
+                    %a#home-nav.scrollTo{:href => "#top"}
+                      HOME
+                  %li
+                    / SERVICES
+                    %a.dropdown-toggle{:href => "#services"}
+                      SERVICES
+                    /
+                      <a href="#services">
+                      SERVICES
+                      </a>
+                    %ul.dropdown-menu.normal{:class => "white-space="}
+                      %li
+                        %a{:href => "residential.html#vacuum-home"} Residential
+                      %li
+                        %a{:href => "commercial.html#observation-elevator"} Commercial
+                      %li
+                        %a{:href => "quote.html#request-quote"} Request A Quote
+                  %li
+                    / PORTFOLIO
+                    / id="portfolio-nav"
+                    %a{:href => "#portfolio"}
+                      PORTFOLIO
+                  %li
+                    / NEWS
+                    %a{:href => "#news"}
+                      NEWS
+                  %li
+                    / CLIENTS
+                    %a{:href => "#clients"}
+                      CLIENTS
+                  %li
+                    / CONTACT
+                    %a{:href => "#contact"}
+                      CONTACT
+        / /Top Nav
+      / REVOLUTION SLIDER
+      .slider.fullwidthbanner-container.roundedcorners
+        .fullwidthbanner{"data-height" => "600", "data-navigationstyle" => "preview2", "data-shadow" => "0"}
+          %ul.hide
+            / SLIDE
+            %li{"data-masterspeed" => "600", "data-saveperformance" => "off", "data-slotamount" => "7", "data-title" => "Safety", "data-transition" => "parallaxtobottom"}
+              / MAIN IMAGE
+              %img{:alt => "cover image", "data-bgfit" => "cover", "data-bgposition" => "center top", "data-bgrepeat" => "no-repeat", :src => "assets/images/_rocket/3-main-elevators.jpeg"}/
+              .tp-caption.white_big.skewfromleft.tp-resizeme{"data-easing" => "Power3.easeInOut", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "600", "data-speed" => "400", "data-splitin" => "words", "data-splitout" => "none", "data-start" => "1500", "data-x" => "471", "data-y" => "100", :style => "z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;"}
+                Rocket Elevators
+              .tp-caption.content_text_center.skewfromleft.tp-resizeme{"data-easing" => "Power3.easeInOut", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "600", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "2000", "data-x" => "530", "data-y" => "195", :style => "z-index: 3; font-size:20px; color:#fff; font-weight:300; text-shadow:none;"}
+                Elevate you home or your commercial building,
+                %br/
+                Safety, Speed and Style.
+              .tp-caption.tp-fade{"data-easing" => "Power3.easeInOut", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "300", "data-speed" => "300", "data-start" => "800", "data-x" => "left", "data-y" => "25", :style => "z-index: 4;"}
+              .tp-caption.skewfromleft.tp-resizeme.un-button-2-lg{"data-easing" => "Power3.easeInOut", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "300", "data-speed" => "300", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "2500", "data-x" => "665", "data-y" => "300", :style => "z-index: 5; max-width: auto; max-height: auto; white-space: nowrap;"}
+                %a.btn.btn-danger.btn-lg{:href => "quote.html#request-quote"}
+                  GET A QUOTE  
+                  %i.fa.fa-angle-right
+            / SLIDE
+            %li{"data-masterspeed" => "600", "data-saveperformance" => "off", "data-slotamount" => "7", "data-title" => "Residential", "data-transition" => "parallaxtobottom"}
+              / MAIN IMAGE
+              %img{:alt => "cover image", "data-bgfit" => "cover", "data-bgposition" => "center top", "data-bgrepeat" => "no-repeat", :src => "assets/images/_rocket/residential-elevator.jpeg"}/
+              .overlay.dark-4
+                / dark overlay [0 to 9 opacity]
+              .tp-caption.font-roboto.skewfromleft.tp-resizeme{"data-easing" => "Cubic.easeOut", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "500", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "1500", "data-x" => "50", "data-y" => "100", :style => "z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;"}
+                Residential Elevators
+                %br/
+                Made affordable
+              .tp-caption.skewfromrightshort.tp-resizeme{"data-easing" => "easeInCirc", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "500", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "1000", "data-x" => "50", "data-y" => "300", :style => "z-index: 3; font-size:20px; color:#fff; font-weight:300; text-shadow:none;"}
+                The high-end quality of Our Residential Elevators
+                %br/
+                is unequaled.
+              .tp-caption.sfb.tp-resizeme{"data-easing" => "Power3.easeIn", "data-elementdelay" => "1", "data-endelementdelay" => "0.1", "data-endspeed" => "500", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "1500", "data-x" => "50", "data-y" => "410", :style => "z-index: 4; max-width: auto;"}
+                %a.btn.btn-danger.btn-lg{:href => "residential.html"}
+                  RESIDENTIAL SERVICES  
+                  %i.fa.fa-angle-right
+            / SLIDE
+            %li{"data-masterspeed" => "600", "data-saveperformance" => "off", "data-slotamount" => "7", "data-title" => "Commercial", "data-transition" => "parallaxtotop"}
+              / MAIN IMAGE
+              %img{:alt => "cover image", "data-bgfit" => "cover", "data-bgposition" => "center top", "data-bgrepeat" => "no-repeat", :src => "assets/images/_rocket/3-commercial-elevators.jpeg"}/
+              .overlay.dark-4
+                / dark overlay [0 to 9 opacity]
+              .tp-caption.font-roboto.skewfromleft.tp-resizeme{"data-easing" => "Cubic.easeOut", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "500", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "1500", "data-x" => "50", "data-y" => "100", :style => "z-index: 2; color:#fff; font-size:65px; line-height:85px; font-weight:bold; letter-spacing:0; text-shadow:none;"}
+                A High end brand for
+                %br/
+                Commercial Elevators
+              .tp-caption.skewfromrightshort.tp-resizeme{"data-easing" => "easeInCirc", "data-elementdelay" => "0.1", "data-endelementdelay" => "0.1", "data-endspeed" => "500", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "1000", "data-x" => "50", "data-y" => "300", :style => "z-index: 3; font-size:20px; color:#fff; font-weight:300; text-shadow:none;"}
+                From London to Tokyo...
+                %br/
+                our Lifts impress!
+              .tp-caption.sfb.tp-resizeme{"data-easing" => "Power3.easeIn", "data-elementdelay" => "1", "data-endelementdelay" => "0.1", "data-endspeed" => "500", "data-speed" => "500", "data-splitin" => "none", "data-splitout" => "none", "data-start" => "1500", "data-x" => "50", "data-y" => "410", :style => "z-index: 4; max-width: auto;"}
+                %a.btn.btn-danger.btn-lg{:href => "commercial.html"}
+                  COMMERCIAL SERVICES  
+                  %i.fa.fa-angle-right
+      / /REVOLUTION SLIDER
+      %hr.m-0/
+      / 1px line separator
+      / BUTTON CALLOUT
+      %a.btn.btn-xlg.btn-primary.fs-20.fullwidth.m-0.rad-0.p-40{:href => "#contact"}
+        %span.font-lato.fs-30
+          %strong Contact us »
+      / /BUTTON CALLOUT
+      / Services
+      %section#services
+        .container
+          .row
+            .col-sm-4
+              %img.img-fluid{:alt => "img", :src => "assets/images/_rocket/awards-services-logo.jpeg"}/
+              %h3.mt-10 Awards
+              %p Here's are success story's.
+              %a.btn.btn-default{:href => "#portfolio"} READ MORE
+            .col-sm-4
+              %img.img-fluid{:alt => "img", :src => "assets/images/_rocket/thompson_cbg_001_062.jpeg"}/
+              %h3.mt-10 Residential
+              %p Rocket Elevators offer you the chance to have your own customize elevator at home!
+              %a.btn.btn-default{:href => "residential.html#vacuum-home"} READ MORE
+            .col-sm-4
+              %img.img-fluid{:alt => "img", :src => "assets/images/_rocket/people-on-elevator-1.jpeg"}/
+              %h3.mt-10 Commercial
+              %p We got the right team for your need.
+              %a.btn.btn-default{:href => "commercial.html#observation-elevator"} READ MORE
+      / /Services
+      / Parallax Contact Us
+      %section.parallax.parallax-1{:style => "background-image: url('assets/images/_rocket/Engineering-3.jpeg');"}
+        .overlay.dark-5
+          / dark overlay [1 to 9 opacity]
+        .container
+          .text-center
+            %h2.fs-40.fw-300 Engineering &amp; Maintenance, Since 1976
+            %a.btn.btn-default.btn-lg{:href => "quote.html"}
+              GET A QUOTE
+              %i.fa.fa-angle-right
+              OR  
+            %a.btn.btn-danger.btn-lg{:href => "#contact"}
+              CONTACT US
+              %i.fa.fa-angle-right
+      / /Parallax Contact Us
+      / PORTFOLIO
+      %section#portfolio
+        .container
+          .heading-title.heading-dotted.text-center
+            %h1 Portfolio
+          .text-center
+            %ul.nav.nav-pills.mix-filter.mb-60
+              %li.filter.active{"data-filter" => "all"}
+                %a{:href => "#"} All
+              %li.filter{"data-filter" => "awards"}
+                %a{:href => "#"} Awards
+              %li.filter{"data-filter" => "residential"}
+                %a{:href => "#"} Residential
+              / Photography
+              %li.filter{"data-filter" => "commercial"}
+                %a{:href => "#"} Commercial &amp; Corporate
+        .portfolio-nogutter
+          .row.mix-grid
+            .col-md-3.col-sm-3.mix.commercial
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/corp/600x300/1-commercial-3-burj-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Golden Burj Khalifa
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Commercial
+            / /item
+            .col-md-3.col-sm-3.mix.awards
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/awards/600x300/1-award-sec-awards-buildings-201-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Buildings 2019 Money-Saving Product
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Award
+            / /item
+            .col-md-3.col-sm-3.mix.residential
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/residential/600x300/1-condo-modern-design-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Condo Modern Design
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Residential
+            / /item
+            .col-md-3.col-sm-3.mix.commercial
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/corp/600x300/2-tower-super-view-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Tower Super View
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Commercial
+            / /item
+            .col-md-3.col-sm-3.mix.awards
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/awards/600x300/2-award-sec-awards-architizer-20-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Architizer A+ Finalist 2016
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Award
+            / /item
+            .col-md-3.col-sm-3.mix.residential
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/residential/600x300/2-residential-3-house-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 House Elevator
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Residential
+            / /item
+            .col-md-3.col-sm-3.mix.commercial
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/corp/600x300/3-high-end-berlin-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 High-end Design Berlin
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Corporate
+            / /item
+            .col-md-3.col-sm-3.mix.residential
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/residential/600x300/3-glass-condominium-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Glass Condominium
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Residential
+            / /item
+            .col-md-3.col-sm-3.mix.residential
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/residential/600x300/4-Glass-capsule-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Glass Capsule
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Residential
+            / /item
+            .col-md-3.col-sm-3.mix.awards
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/awards/600x300/3-award-elevator-2016-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Elevators Awards 2016
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Award
+            / /item
+            .col-md-3.col-sm-3.mix.commercial
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/corp/600x300/4-corporate-elevator-resize.jpeg", :width => "600"}/
+                .item-box-desc
+                  %h3 Corporate Elevator
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Corporate
+            / /item
+            .col-md-3.col-sm-3.mix.awards
+              / item
+              .item-box
+                %figure
+                  %img.img-fluid{:alt => "", :height => "399", :src => "assets/images/_rocket/portfolio/awards/600x300/4-the-ellies-2020-resize.png", :width => "600"}/
+                .item-box-desc
+                  %h3 The Ellies 2020
+                  %ul.list-inline.categories.m-0
+                    %li
+                      %a{:href => "#"} Award
+            / /item
+      / /PORTFOLIO
+      / Testimonials
+      %section.section-xs.dark
+        .container
+          .owl-carousel.text-center.owl-testimonial.m-0{"data-plugin-options" => "{\"singleItem\": true, \"autoPlay\": 3500, \"navigation\": false, \"pagination\": true, \"transitionStyle\":\"fade\"}"}
+            .testimonial
+              %figure
+                %img.rounded{:alt => "", :src => "assets/images/_rocket/testimonials/1-CEO-Patrick-Thibault.jpeg"}/
+              .testimonial-content.p-0
+                %p.lead CEO
+                %cite
+                  Patrick Thibault
+                  %span Rocket Elevators
+            .testimonial
+              %figure
+                %img.rounded{:alt => "", :src => "assets/images/_rocket/testimonials/2-employee-of-the-month.jpg"}/
+              .testimonial-content.p-0
+                %p.lead Employee Of The Month
+                %cite
+                  Jones Tavares
+                  %span Rocket Elevators
+      / /Testimonials
+      / News
+      %section#news
+        .container
+          .heading-title.heading-dotted.text-center
+            %h2 News
+          .owl-carousel.owl-padding-10.buttons-autohide.controlls-over{"data-plugin-options" => "{\"singleItem\": false, \"items\":\"4\", \"autoPlay\": 4000, \"navigation\": true, \"pagination\": false}"}
+            .img-hover
+              %a{:href => "https://elevatorworld.com/news/daily-news/rezoning-for-chicago-mixed-use-development-approved/", :target => "_blank"}
+                %img.img-fluid{:alt => "Elevator World", :height => "300", :src => "assets/images/_rocket/news/news-thumb-3.png", :width => "451"}/
+              %h4.text-left.mt-20
+                %a{:href => "https://elevatorworld.com/news/daily-news/rezoning-for-chicago-mixed-use-development-approved/", :target => "_blank"} Rezoning for Chicago Mixed-Use Development Approved
+              %ul.text-left.fs-12.list-inline.list-separator
+                %li
+                  %i.fa.fa-calendar
+                  20th Sep 2021
+                %li
+                  %a{:href => "blog-single-default.html#comments"}
+                    %i.fa.fa-comments
+                    3
+            .img-hover
+              %a{:href => "https://elevatortoday.com/2014/05/02/hyundai-elevator-called-foot/", :target => "_blank"}
+                %img.img-fluid{:alt => "", :src => "assets/images/_rocket/news/news-thumb-4.png"}/
+              %h4.text-left.mt-20
+                %a{:href => "https://elevatortoday.com/2014/05/02/hyundai-elevator-called-foot/", :target => "_blank"} Touchless footbutton by Hyundai elevator
+              %ul.text-left.fs-12.list-inline.list-separator
+                %li
+                  %i.fa.fa-calendar
+                  14th May 2014
+                %li
+                  %a{:href => "blog-single-default.html#comments"}
+                    %i.fa.fa-comments
+                    3
+            .img-hover
+              %a{:href => "https://elevatortoday.com/2012/10/13/mezolift-first-solar-elevator/", :target => "_blank"}
+                %img.img-fluid{:alt => "", :height => "300", :src => "assets/images/_rocket/news/news-thumb-5.jpeg", :width => "451"}/
+              %h4.text-left.mt-20
+                %a{:href => "https://elevatortoday.com/2012/10/13/mezolift-first-solar-elevator/", :target => "_blank"} Mezolift first solar elevator!
+              %ul.text-left.fs-12.list-inline.list-separator
+                %li
+                  %i.fa.fa-calendar
+                  13th Oct 2012
+                %li
+                  %a{:href => "blog-single-default.html#comments"}
+                    %i.fa.fa-comments
+                    2
+            .img-hover
+              %a{:href => "https://elevatortoday.com/2014/09/12/euro-lift-2012-wrap-up/", :target => "_blank"}
+                %img.img-fluid{:alt => "", :src => "assets/images/_rocket/news/news-thumb-6.jpeg"}/
+              %h4.text-left.mt-20
+                %a{:href => "https://elevatortoday.com/2014/09/12/euro-lift-2012-wrap-up/", :target => "_blank"} EURO-LIFT Elevator Expo
+              %ul.text-left.fs-12.list-inline.list-separator
+                %li
+                  %i.fa.fa-calendar
+                  12th Sep 2014
+                %li
+                  %a{:href => "blog-single-default.html#comments"}
+                    %i.fa.fa-comments
+                    7
+            .img-hover
+              %a{:href => "https://elevatortoday.com/2018/01/18/magic-mirror-for-elevators/", :target => "_blank"}
+                %img.img-fluid{:alt => "", :src => "assets/images/_rocket/news/news-thumb-7.png"}/
+              %h4.text-left.mt-20
+                %a{:href => "https://elevatortoday.com/2018/01/18/magic-mirror-for-elevators/", :target => "_blank"} Magic Mirror for Elevators
+              %ul.text-left.fs-12.list-inline.list-separator
+                %li
+                  %i.fa.fa-calendar
+                  18th Jan 2018
+                %li
+                  %a{:href => "blog-single-default.html#comments"}
+                    %i.fa.fa-comments
+                    2
+            .img-hover
+              %a{:href => "https://elevatortoday.com/2017/06/06/hitachis-elevator-reaches-4134-fpm/", :target => "_blank"}
+                %img.img-fluid{:alt => "", :src => "assets/images/_rocket/news/news-thumb-8.jpeg"}/
+              %h4.text-left.mt-20
+                %a{:href => "https://elevatortoday.com/2017/06/06/hitachis-elevator-reaches-4134-fpm/", :target => "_blank"} Hitachi’s Elevator Reaches 4134 fpm
+              %ul.text-left.fs-12.list-inline.list-separator
+                %li
+                  %i.fa.fa-calendar
+                  06th Jun 2017
+                %li
+                  %a{:href => "blog-single-default.html#comments"}
+                    %i.fa.fa-comments
+                    1
+      / /News
+      / Clients
+      %section#clients.alternate
+        .container
+          .heading-title.heading-dotted.text-center
+            %h2 Our Customers
+          %ul.row.clients-dotted.list-inline
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/1-marriott-resize.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/2-Hilton-resize.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/3-Hyatt.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/4-IHG-resize.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/5-burj-khalifa-removebg-2.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "Empire State Building", :src => "assets/images/_rocket/clients/6-empire-state-removebg-2.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/7-the-gherkin-removebg.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/8-fairmont-chateau-removebg.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/9-calgary-tower-removebg.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/10-capitol-records-removebg.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/11-skylon-tower-removebg.png"}/
+            %li.col-md-3.col-sm-3.col-6
+              %a{:href => "#"}
+                %img.img-fluid{:alt => "client", :src => "assets/images/_rocket/clients/12-caesars-palace-removebg.png"}/
+      / /Clients
+      / CONTACT
+      %section#contact
+        .container
+          %header.text-center.mb-60
+            %h2 Contact Us
+            %p.lead.font-lato It will be our pleasure to answer questions that you might have.
+            %hr/
+          .row
+            / FORM
+            .col-md-8.col-sm-8
+              %h3
+                Drop us a line or just say
+                %strong
+                  %em Hello!
+              / Alert Success
+              #alert_success.alert.alert-success.mb-30
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+                %strong Thank You!
+                Your message successfully sent!
+              / /Alert Success
+              / Alert Failed
+              #alert_failed.alert.alert-danger.mb-30
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+                %strong [SMTP] Error!
+                Internal server error!
+              / /Alert Failed
+              / Alert Mandatory
+              #alert_mandatory.alert.alert-danger.mb-30
+                %button.close{"aria-hidden" => "true", "data-dismiss" => "alert", :type => "button"} ×
+                %strong Sorry!
+                You need to complete all mandatory (*) fields!
+              / /Alert Mandatory
+              %form{:action => "php/contact.php", :enctype => "multipart/form-data", :method => "post"}
+                %fieldset
+                  %input{:name => "action", :type => "hidden", :value => "contact_send"}/
+                  .row
+                    .col-md-4
+                      %label{:for => "contact:name"} Full Name *
+                      %input#contact:name.form-control{:name => "contact[name][required]", :required => "", :type => "text", :value => ""}/
+                    .col-md-4
+                      %label{:for => "contact:email"} E-mail Address *
+                      %input#contact:email.form-control{:name => "contact[email][required]", :required => "", :type => "email", :value => ""}/
+                    .col-md-4
+                      %label{:for => "contact:phone"} Phone
+                      %input#contact:phone.form-control{:name => "contact[phone]", :type => "text", :value => ""}/
+                  .row
+                    .col-md-4
+                      %label{:for => "contact:name"} Business Name *
+                      %input#contact:business.form-control{:name => "contact[name][required]", :required => "", :type => "text", :value => ""}/
+                    .col-md-8
+                      %label{:for => "contact:name"} Project Name *
+                      %input#contact:project.form-control{:name => "contact[email][required]", :required => "", :type => "name", :value => ""}/
+                  .row
+                    .col-md-8
+                      %label{:for => "contact:subject"} Project Description *
+                      %input#contact:subject.form-control{:name => "contact[subject][required]", :required => "", :type => "text", :value => ""}/
+                    .col-md-4
+                      %label{:for => "contact_department"} Department
+                      %select.form-control.pointer{:name => "contact[department]"}
+                        %option{:value => ""} --- Select ---
+                        %option{:value => "Marketing"} Residential
+                        %option{:value => "Webdesign"} Commercial &amp; Corporate
+                        %option{:value => "Architecture"} Maintenance
+                  .row
+                    .col-md-12
+                      %label{:for => "contact:message"} Message *
+                      %textarea#contact:message.form-control{:maxlength => "10000", :name => "contact[message]", :required => "", :rows => "8"}
+                  .row
+                    .col-md-12
+                      %label{:for => "contact:attachment"} File Attachment
+                      / custom file upload
+                      %input#file.custom-file-upload{"data-btn-text" => "Select a File", :name => "contact[attachment]", :type => "file"}/
+                      %small.text-muted.block Max file size: 10Mb (zip/pdf/jpg/png)
+                .row
+                  .col-md-12
+                    %button.btn.btn-primary{:type => "submit"}
+                      %i.fa.fa-check
+                      SEND MESSAGE
+            / /FORM
+            / INFO
+            .col-md-4.col-sm-4
+              %h2 Visit Us
+              %div
+                / id="map2" class="h-400"
+                %iframe{:allowfullscreen => "", "aria-hidden" => "false", :frameborder => "0", :height => "450", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2729.0429937847675!2d-71.28188348468983!3d46.84284354841674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb897dddd400001%3A0x45e8d9babd84eb09!2s725%20Bd%20Lebourgneuf%20%23418%2C%20Quebec%20City%2C%20QC%20G2J%200C4!5e0!3m2!1spt-BR!2sca!4v1632278869332!5m2!1spt-BR!2sca", :style => "border:0;", :tabindex => "0", :width => "450"}
+              %hr/
+              %p
+                %span.block
+                  %strong
+                    %i.fa.fa-map-marker
+                    Address:
+                  418-725 Boulevard Lebourgneuf, Québec, QC G2J 0C4, Canada
+                %span.block
+                  %strong
+                    %i.fa.fa-phone
+                    Phone:
+                  %a{:href => "tel:1800-555-1234"} (418) 555-1234
+                %span.block
+                  %strong
+                    %i.fa.fa-envelope
+                    Email:
+                  %a{:href => "mailto:info@codeboxx.com"} info@codeboxx.com
+            / /INFO
+      / /CONTACT
+    / /wrapper
+    / SCROLL TO TOP
+    %a#toTop{:href => "#"}
+    / PRELOADER
+    #preloader
+      .inner
+        %span.loader
+    / /PRELOADER
+    / JAVASCRIPT FILES
+    :javascript
+      var plugin_path = 'assets/plugins/';
+    %script{:src => "assets/plugins/jquery/jquery-3.3.1.min.js"}
+    %script{:src => "assets/js/scripts.js"}
+    / REVOLUTION SLIDER
+    %script{:src => "assets/plugins/slider.revolution/js/jquery.themepunch.tools.min.js"}
+    %script{:src => "assets/plugins/slider.revolution/js/jquery.themepunch.revolution.min.js"}
+    %script{:src => "assets/js/view/demo.revolution_slider.js"}
+    / PAGELEVEL SCRIPTS
+    %script{:src => "assets/js/contact.js"}
+    /
+      GMAP.JS
+      http://hpneo.github.io/gmaps/
+    %script{:src => "//maps.google.com/maps/api/js?key=AIzaSyCqCn84CgZN6o1Xc3P4dM657HIxkX3jzPY"}
+    %script{:src => "assets/plugins/gmaps.js"}
