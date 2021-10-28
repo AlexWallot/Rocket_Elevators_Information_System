@@ -1,96 +1,104 @@
 
-            
-            <div id="header" class="navbar-toggleable-md sticky header-md clearfix">
+		<!-- wrapper -->
+		<div id="wrapper">
 
-            <!-- TOP NAV -->
-            <header id="topNav">
-                <div class="container">
+			<div id="header" class="navbar-toggleable-md sticky header-md clearfix">
 
-                    <!-- Mobile Menu Button -->
-                    <button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
-                        <i class="fa fa-bars"></i>
-                    </button>
+				<!-- TOP NAV -->
+				<header id="topNav">
+					<div class="container">
 
-                    <!-- Logo -->
-                    <!-- scrollTo -->
-                    <a class="logo float-left scrollTo" href="#top">
-                        <!-- img src="assets/images/_rocket/R2.png" alt="" / -->
-                        <%= image_tag("_rocket/R2.png", :alt => "cover image", :data_bgposition => "center top", :data_bgfit => "cover", :data_bgrepeat => "no-repeat") %>)
+						<!-- Mobile Menu Button -->
+						<button class="btn btn-mobile" data-toggle="collapse" data-target=".nav-main-collapse">
+							<i class="fa fa-bars"></i>
+						</button>
 
-                    </a>
+						<!-- Logo -->
+						<!-- scrollTo -->
+						<a class="logo float-left scrollTo" href="#top">
+              <%= image_tag "_rocket/R2.png" %>
+						</a>
 
-                    <!-- Top Nav -->
-                    <div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
-                        <nav class="nav-main">
+						<!-- Top Nav -->
+						<div class="navbar-collapse collapse float-right nav-main-collapse submenu-dark">
+							<nav class="nav-main">
 
-                            <ul id="topMain" class="nav nav-pills nav-main nav-onepage">
-                                <li class>
-                                    <!-- HOME -->
+								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
+									<li class>
+										<!-- HOME -->
                                     <%if @index %>
                                     <a id="home-nav" class="scrollTo" href="#top">
                                         HOME
                                     </a>
                                     <%else%>
                                     <%= link_to"HOME" , root_path %>
-                                    
                                     <%end%>
-                                </li>
-                                <li><!-- SERVICES -->
-                                    <a href="#services" class="dropdown-toggle">
-                                        SERVICES
-                                    </a>
-                                    <!-- <a href="#services">
-                                        SERVICES
-                                    </a> -->
-                                    <ul class="dropdown-menu white-space= normal">
-                                        <li>
-                                            <%= link_to "Residential", pages_residential_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to "Commercial", pages_commercial_path %>
-                                        </li>
-                                        <li>
-                                            <%= link_to "Request a Quote", pages_quote_path %>
-                                        </li>
-                                    </ul>
-                                </li>
+									
+									</li>
+									<li><!-- SERVICES -->
+										<a href="#services" class="dropdown-toggle">
+											SERVICES
+										</a>
+										<!-- <a href="#services">
+											SERVICES
+										</a> -->
+										<ul class="dropdown-menu white-space= normal">
+											<li>
+												<%= link_to"Residential" , pages_residential_path %>
+											</li>
+											<li>
+												<<%= link_to"Commercial" , pages_commercial_path %>
+											</li>
+											<li>
+												<%= link_to"Quote" , pages_quote_path %>
+											</li>
+										</ul>
+									</li>
 
-                                <li><!-- PORTFOLIO -->
-                                    <!-- id="portfolio-nav" -->
-                                    <a href="#portfolio">
-                                        PORTFOLIO
-                                    </a>
-                                </li>
-                                <li><!-- NEWS -->
-                                    <a href="#news">
-                                        NEWS
-                                    </a>
-                                </li>
-                                <li><!-- CLIENTS -->
-                                    <a href="#clients">
-                                        CLIENTS
-                                    </a>
-                                </li>
-                                <li><!-- CONTACT -->
-                                    <a href="#contact">
-                                        CONTACT
-                                    </a>
-                                </li>
-                                <% if user_signed_in? %>
-                                    <li><!-- SIGN OUT -->
-                                        <%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
-                                    </li>
-                                <% else %>
-                                    <li><!-- SIGN IN -->
-                                        <%= link_to "SIGN IN", new_user_session_path %>
-                                    </li>
-                                <% end %>
-                            </ul>
+									<li><!-- PORTFOLIO -->
+										<!-- id="portfolio-nav" -->
+										<a href="#portfolio">
+											PORTFOLIO
+										</a>
+									</li>
+									<li><!-- NEWS -->
+										<a href="#news">
+											NEWS
+										</a>
+									</li>
+									<li><!-- CLIENTS -->
+										<a href="#clients">
+											CLIENTS
+										</a>
+									</li>
+									<li><!-- CONTACT -->
+										<a href="#contact">
+											CONTACT
+										</a>
+									</li>
+									<li><!-- ADMIN -->
+										
+										<% if user_signed_in? %>
+                                    		<li><!-- SIGN OUT -->
+                                        	<%= link_to "SIGN OUT", destroy_user_session_path, method: :delete %>
+                                    		</li>
+											
+											<li><!-- ADMIN -->
+                                        	<%= link_to "ADMIN", rails_admin_path %>
+                                    		</li>
+										<%else%>
+											<li><!--SING IN-->	
+											<%= link_to "SIGN IN", new_user_session_path %>
+											</li>
+                                		<% end %>
+									</li>
+								</ul>
 
-                        </nav>
-                    </div>
+							</nav>
+						</div>
 
-                </div>
-            </header>
-            <!-- /Top Nav -->
-            </div>
+					</div>
+				</header>
+				<!-- /Top Nav -->
+
+			</div>
