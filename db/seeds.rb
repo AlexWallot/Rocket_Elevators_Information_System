@@ -28,6 +28,9 @@ User.create(id: 19,email: 'abdul.akeeb@codebozz.biz',password: 'password')
 User.create(id: 20,email: 'krista.sheely@codeboxx.biz',password: 'password')
 User.create(id: 21,email: 'jonathan.murray@codeboxx.biz',password: 'password')
 
+Quote.create(id: 1, type_building: "allo")
+Quote.create(id: 2, type_building: "allo")
+
 Employee.create(id: 1,first_name: 'Nicolas',last_name: 'Genest',title: 'CEO',email: 'nicolas.genest@codeboxx.biz',user_id: 1)
 Employee.create(id: 2,first_name: 'Nadya',last_name: 'Fortier',title: 'Director',email: 'nadya.fortier@codeboxx.biz',user_id: 2)
 Employee.create(id: 3,first_name: 'Martin',last_name: 'Chantal',title: 'Assistant Director ',email: 'martin.chantal@codeboxx.biz',user_id: 3)
@@ -49,3 +52,73 @@ Employee.create(id: 18,first_name: 'Emmanuela',last_name: 'Derilus',title: 'Deve
 Employee.create(id: 19,first_name: 'Abdul',last_name: 'Akeeb',title: 'Developer',email: 'abdul.akeeb@codebozz.biz',user_id: 19)
 Employee.create(id: 20,first_name: 'Krista',last_name: 'Sheely',title: 'Developer',email: 'krista.sheely@codeboxx.biz',user_id: 20)
 Employee.create(id: 21,first_name: 'Jonathan',last_name: 'Murray',title: 'Developer',email: 'jonathan.murray@codeboxx.biz',user_id: 21)
+
+100.times do
+    Building_details.create([{
+        buildingId:,
+        informationKey:,
+        value:
+
+
+    }])
+end
+
+100.times do
+    Batteries.create([{
+        buildingId:,
+        type:,
+        status:,
+        employeeId:,
+        dateCommissioning:,
+        dateLastInspection:
+
+
+    }])
+end
+
+100.times do
+    Columns.create([{
+        buildingId:,
+        type:,
+        numberFloorServed:,
+        status:,
+        information:,
+        notes:
+
+
+
+    }])
+
+end
+
+100.times do
+    Elevator.create([{
+        columnId:,
+        serialNumber:,
+        model:,
+        type:,
+        status:,
+        dateCommissioning:,
+        dateLastInspection:,
+        certificateOperations:,
+        information:,
+        notes:
+
+
+    }])
+    
+end
+
+100.times do
+    Address.create([{
+        typeAddress: Faker::Address.community,
+        status: Faker::Lorem.word,
+        entity: Faker::Company.name,
+        numberAndStreet: Faker::Address.street_address,
+        suiteOrApartment: Faker::Address.building_number,
+        city: Faker::Address.city,
+        postalCode: Faker::Address.postcode,
+        country: Faker::Address.country,
+        notes: Faker::Lorem.paragraph
+    }])
+end
