@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root 'pages#index'
   get 'pages/residential'
   get 'pages/commercial'
-  get 'pages/quote'
+  get 'pages/quote', to: "pages#quote" 
+  post '/create_quotes', to: "pages#create"
+  get  'contact',  to: 'contact#index'
+  post 'contact', to: 'contact#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

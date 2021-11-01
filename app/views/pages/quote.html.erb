@@ -1,3 +1,4 @@
+   
   <!-- REVOLUTION SLIDER -->
   <div class="slider fullwidthbanner-container roundedcorners">
 
@@ -196,6 +197,7 @@
 
 
 			<!--Request a Form-->
+    
 			<section id="request-quote">
 				<div class="container">
 					<div class="heading-title heading-dotted text-center">
@@ -203,7 +205,7 @@
 					</div>
 
 					<!-- Form Header-->
-					<div  id="border-rad-2" class="p-8 bg-light">
+            <div  id="border-rad-2" class="p-8 bg-light">
 						<div id="border-rad" class="col p-6 mb-8 bg-white border">
 							<!--Header text-->
 							<div class="row-12 p-3 m-2">
@@ -212,22 +214,23 @@
 
 
 							<!-- Checkbox -->
+            
 							<div class="container align-items-center text-center form-check form-check-inline px-5">
-								<form class="type-answer col-sm-12 m-4">
+								<form class="type-answer col-sm-12 m-4" id = "type_building">
 									<label class="checkbox">
-										<input type="radio" name="radio-btn" id="res">
+										<input type="radio" name="Residential" id="res">
 										<i name="res"></i> Residential 
 									</label>
 									<label class="checkbox">
-										<input type="radio" name="radio-btn" id="comm">
+										<input type="radio" name="Commercial" id="comm">
 										<i></i> Commercial
 									</label>
 									<label class="checkbox">
-										<input type="radio" name="radio-btn" id="corp">
+										<input type="radio" name="Corporate" id="corp">
 										<i></i> Corporate
 									</label>
 									<label class="checkbox">
-										<input type="radio" name="radio-btn" id="hyb">
+										<input type="radio" name="Hybrid" id="hyb">
 										<i></i> Hybrid 
 									</label>
 
@@ -238,21 +241,21 @@
 						<div id="border-rad-3" class="border bg-white p-5">
 							<div class="row-lg-4 p-3 mt-9">
 								<div class="col-md-12">
-									<form id="fields">
+									<form id="fields" class = "fields">
 										<div id="filled" class="row align-items-center">
 											<div class="form-group col-sm-4 py-2 mb-2" id="numApartments">
 												<label>Number of Apartments</label>
-												<input type="text" id="input_apartments" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input name = "numApartment" type="text" id="input_apartments" min="0" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 											
 											<div class="form-group col-sm-4 py-2 mb-2" id="numFloorsHyb">
 												<label>Number of Floors<span class="grey text-red"><small> (Excluding Basements)</small></span></label>
-												<input type="text" id="input_floorsHyb" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input name = "numfloor"type="text" id="input_floorsHyb" min="0" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numFloorsRes">
 												<label>Number of Floors</label>
-												<input type="text" id="input_floorsRes" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input name = "numfloor" type="text" id="input_floorsRes" min="0" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 											
 											<div class="form-group col-sm-4 py-2 mb-2" id="numBasements">
@@ -262,7 +265,7 @@
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numBusinesses">
 												<label>Number of Distinct Businesses</label>
-												<input type="text" id="input_businesses" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input name="numApartment" type="text" id="input_businesses" min="0" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numParking">
@@ -282,7 +285,7 @@
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numOccupants">
 												<label>Number of Occupants Per Floor</label>
-												<input type="text" id="input_occupants" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input name = "numOccupant" type="text" id="input_occupants" min="0" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numHours">
@@ -297,7 +300,7 @@
 											<p class="results" id="showColumns"></p>
 											<p class="results" id="showElevators"></p>
 											<div class="results row justify-content-md-center text-center">
-												<p id="qtdElevators" class="text-blue bg-light"></p>
+												<p name = "numElevator" id="qtdElevators" class="text-blue bg-light"></p>
 											</div>
 											<hr>
 
@@ -339,13 +342,66 @@
 											<div id="reset">
 												<button type="button" class="btn btn-primary">Clear</button>
 											</div>
-										</div>
+                      <div id="submit" onclick = addEventListener()>
+                    <button type="submit" class="btn btn-secondary">Send Your Quote</button>
 									</form>
-								</div><br><hr>
-							</div>
+                <script>
+                document.addEventListener('DOMContentLoaded', () => {
+        document
+          .getElementById('fields')
+          .addEventListener('submit', handleForm);
+      });
+      function handleForm(ev) {
+        ev.preventDefault(); //stop the page reloading
+        //console.dir(ev.target);
+        let fields = ev.target;
+        let fd = new FormData(fields);
 
+        //add more things that were not in the form
+        fd.append('api-key', 'myApiKey');
+
+        //look at all the contents
+        for (let key of fd.keys()) {
+          console.log(key, fd.get(key));
+        }
+        let json = convertFD2JSON(fd);
+
+        //send the request with the formdata
+        let url = 'http://localhost:3000/';
+        let h = new Headers();
+        h.append('Content-type', 'application/json');
+
+        let req = new Request(url, {
+          headers: h,
+          body: fd ,
+          method: 'POST',
+        });
+        //console.log(req);
+        fetch(req)
+          .then((res) => res.json())
+          .then((data) => {
+            console.log('Response from server');
+            console.log(data);
+          })
+          .catch(console.warn);
+      }
+
+      function convertFD2JSON(formData) {
+        let obj = {};
+        for (let key of formData.keys()) {
+          obj[key] = formData.get(key);
+        }
+        return JSON.stringify(obj);
+      }
+                
+                </script> 
+							</div><br><hr>
+							</div>
 						</div>
-					</div>
+          </div>
 				</div>
+        <div>
+			</div>
 			</section>
+    
 			<!-- Form Fields -->

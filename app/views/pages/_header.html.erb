@@ -26,7 +26,7 @@
 								<ul id="topMain" class="nav nav-pills nav-main nav-onepage">
 									<li class>
 										<!-- HOME -->
-                                    <%if @index %>
+                                    <%if  %>
                                     <a id="home-nav" class="scrollTo" href="#top">
                                         HOME
                                     </a>
@@ -86,7 +86,7 @@
 											<li><!-- ADMIN -->
                                         	<%= link_to "ADMIN", rails_admin_path %>
                                     		</li>
-										<%else%>
+										<% else%>
 											<li><!--SING IN-->	
 											<%= link_to "SIGN IN", new_user_session_path %>
 											</li>

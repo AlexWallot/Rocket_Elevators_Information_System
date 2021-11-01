@@ -24,3 +24,4 @@
 //= require owl.carousel
 //= require jquery-ui
 //= require bootstrap
+//= require faker
