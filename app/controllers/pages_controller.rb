@@ -8,7 +8,7 @@ class PagesController < ApplicationController
   def commercial
   end
   
-  def create
+  def contact
     @contact = Contact.new
   end
 

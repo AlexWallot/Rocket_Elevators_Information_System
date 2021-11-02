@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'pages/commercial'
   get 'pages/quote', to: "pages#quote" 
   post '/create_quotes', to: "pages#create"
-  get  'contact',  to: 'contact#index'
+  get  'contact',  to: 'contact#pages'
   post 'contact', to: 'contact#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

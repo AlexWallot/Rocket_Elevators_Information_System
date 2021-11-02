@@ -21,4 +21,4 @@
 
 //= require bootstrap.min
 //= require owl.carousel
-//= require bootstrapgem
+

@@ -30,9 +30,6 @@ User.create(id: 19,email: 'abdul.akeeb@codebozz.biz',password: 'password')
 User.create(id: 20,email: 'krista.sheely@codeboxx.biz',password: 'password')
 User.create(id: 21,email: 'jonathan.murray@codeboxx.biz',password: 'password')
 
-Quote.create(id: 1, type_building: "allo")
-Quote.create(id: 2, type_building: "allo")
-
 Employee.create(id: 1,first_name: 'Nicolas',last_name: 'Genest',title: 'CEO',email: 'nicolas.genest@codeboxx.biz',user_id: 1)
 Employee.create(id: 2,first_name: 'Nadya',last_name: 'Fortier',title: 'Director',email: 'nadya.fortier@codeboxx.biz',user_id: 2)
 Employee.create(id: 3,first_name: 'Martin',last_name: 'Chantal',title: 'Assistant Director ',email: 'martin.chantal@codeboxx.biz',user_id: 3)
@@ -55,63 +52,14 @@ Employee.create(id: 19,first_name: 'Abdul',last_name: 'Akeeb',title: 'Developer'
 Employee.create(id: 20,first_name: 'Krista',last_name: 'Sheely',title: 'Developer',email: 'krista.sheely@codeboxx.biz',user_id: 20)
 Employee.create(id: 21,first_name: 'Jonathan',last_name: 'Murray',title: 'Developer',email: 'jonathan.murray@codeboxx.biz',user_id: 21)
 
-100.times do
-    Building_details.create([{
-        buildingId:,
-        informationKey:,
-        value:
-
-
-    }])
-end
-
-100.times do
-    Batteries.create([{
-        buildingId:,
-        type:,
-        status:,
-        employeeId:,
-        dateCommissioning:,
-        dateLastInspection:
-
-
-    }])
-end
-
-100.times do
-    Columns.create([{
-        buildingId:,
-        type:,
-        numberFloorServed:,
-        status:,
-        information:,
-        notes:
-
-
-
-    }])
-
-end
-
-100.times do
-    Elevator.create([{
-        columnId:,
-        serialNumber:,
-        model:,
-        type:,
-        status:,
-        dateCommissioning:,
-        dateLastInspection:,
-        certificateOperations:,
-        information:,
-        notes:
-
-
-    }])
-end     
+typeA = ['residential', 'commercial', 'corporate', 'hybrid'] ;
+typeB = ['residential', 'commercial', 'corporate'] ;
+modelA = ['standard', 'premium', 'excelium'] ;
+statusA = ['online','down','up','offline','maintenance','busy','crowded','empty'] ;
+informationA =['type', 'construction_year', 'elevator_shaft_amount','amount_of_floor','building_status' , 'model','status','number_of_occupants' ] ;
 
 userId = 22
-100.times do
+179.times do
     User.create([{
         id: userId,
         email: Faker::Internet.email,
@@ -119,9 +67,30 @@ userId = 22
     }])
     userId+=1
 end
-userId = 22
+id = 22
 
-100.times do
+user_id = 22
+79.times do
+    Employee.create([{
+    
+        id:id,
+        first_name:Faker::Name.first_name ,
+        last_name:Faker::Name.last_name,
+        title:Faker::Job.position,
+        email:Faker::Internet.email,
+        user_id:user_id
+    }])
+    id = id + 1
+    user_id = user_id + 1
+
+end
+
+
+
+
+
+
+200.times do
     Lead.create([{
         fullNameContact: Faker::Name.name,
         compagnyName: Faker::Company.name,
@@ -136,7 +105,7 @@ userId = 22
     }])
 end
 
-100.times do
+200.times do
     Address.create([{
         typeAddress: Faker::Address.community,
         status: Faker::Lorem.word,
@@ -151,10 +120,11 @@ end
 end
 
 addressId = 1
+user_id = 101
 100.times do
     Customer.create([{
         userId: userId,
-        dateCreation: Faker::Date.between(from: '2014-01-01', to: '2014-10-01'),
+        dateCreation: Faker::Date.between(from: '2019-01-01', to: '2021-10-01'),
         compagnyName: Faker::Company.name,
         addressId: addressId,
         fullName: Faker::Name.name,
@@ -171,7 +141,7 @@ end
 customerId = 1
 addressId = 1
 
-100.times do
+200.times do
     Building.create([{
         customerId: customerId,
         addressId: addressId,
@@ -185,3 +155,73 @@ addressId = 1
     customerId = customerId + 1
     addressId = addressId + 1
 end
+
+
+buildingId = 1
+200.times do
+    BuildingDetail.create([{
+        buildingId:buildingId,
+        informationKey:informationA.sample(random: Random.new(3)) , 
+        value:[Faker::Number.between(from: 1950, to: 2021),typeA.sample(random: Random.new(1)),statusA.sample(random: Random.new(1))]
+
+
+    }])
+
+    buildingId = buildingId + 1
+end
+
+buildingId = 1
+employeeId = 22
+200.times do
+    Batterie.create([{
+        buildingId:buildingId,
+        types:typeA.sample(random: Random.new(1)),
+        status:statusA.sample(random: Random.new(1)),
+        employeeId:employeeId,
+        dateCommissioning:Faker::Date.between(from: '2018-01-01', to: '2021-11-10'),
+        dateLastInspection:Faker::Date.between(from: '2020-01-01', to: '2021-11-10'),
+        certificateOperations:Faker::IDNumber.valid ,
+        information:Faker::Lorem.sentence(word_count: 3),
+        notes:Faker::Lorem.paragraph(sentence_count: 2)
+
+    }])
+    buildingId = buildingId + 1
+    employeeId += 1
+end
+
+batteryId = 1
+200.times do
+    Column.create([{
+        batteryId:batteryId,
+        types:typeB.sample(random: Random.new(1)),
+        numberFloorServed:Faker::Number.number(digits: 2),
+        status: statusA.sample(random: Random.new(1)),
+        information:Faker::Lorem.sentence(word_count: 3),
+        notes:Faker::Lorem.paragraph(sentence_count: 2)
+
+
+
+    }])
+    batteryId = batteryId + 1
+
+end
+columnId = 1
+
+200.times do
+    Elevator.create([{
+        columnId:columnId ,
+        serialNumber: Faker::Barcode.upc_a,
+        model:modelA.sample(random: Random.new(1)),
+        types:typeB.sample(random: Random.new(1)),
+        status: statusA.sample(random: Random.new(1)),
+        dateCommissioning:Faker::Date.between(from: '2018-01-01', to: '2021-11-10'),
+        dateLastInspection:Faker::Date.between(from: '2020-01-01', to: '2021-11-10'),
+        certificateOperations:Faker::IDNumber.valid ,
+        information:Faker::Lorem.sentence(word_count: 3),
+        notes:Faker::Lorem.paragraph(sentence_count: 2)
+
+
+    }])
+    columnId = columnId + 1
+end     
+

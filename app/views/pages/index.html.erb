@@ -693,60 +693,60 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<form action="contact_index_path" method="post" enctype="multipart/form-data" id= contactForm >
+							<%= form_for (@contact) do |f| %>
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
 											<div class="col-md-4">
-												<label for="contact:name">Full Name *</label>
-												<input required type="text" value="" class="form-control" name="name:" id="contact:name">
+												<%= f.label :Full_Name%>
+												<%= f.text_field :name , value:"", class:"form-control", name:"name:" , id:"contact:name"%>
 											</div>
 											<div class="col-md-4">
-												<label for="contact:email">E-mail Address *</label>
-												<input required type="email" value="" class="form-control" name="email:" id="contact:email">
+												<%= f.label :Email%>
+												<%= f.email_field :email, value:"" ,class:"form-control" ,name:"email:", id:"contact:email"%>
 											</div>
 											<div class="col-md-4">
-												<label for="contact:phone">Phone</label>
-												<input type="text" value="" class="form-control" name="phone:" id="contact:phone">
+												<%= f.label :Phone%>
+												<%= f.text_field :phone .value:"" ,class:"form-control" ,name:"phone:" ,id:"contact:phone"%>
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-4">
-												<label for="contact:name">Business Name *</label>
-												<input required type="text" value="" class="form-control" name="businessName:" id="contact:business">
+												<%= f.label :Business_Name %>
+												<%= f.text_field :business_Name , value:"", class:"form-control", name:"businessName:", id:"contact:business"%>
 											</div>
 											<div class="col-md-8">
-												<label for="contact:name">Project Name *</label>
-												<input required type="name" value="" class="form-control" name="projectName:" id="contact:project">
+												<%= f.label :project_Name %>
+												<%= f.text_field :project_Name , value:"" , class:"form-control", name:"projectName:", id:"contact:project"%>
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-8">
-												<label for="contact:subject">Project Description *</label>
-												<input required type="text" value="" class="form-control" name="subject:" id="contact:subject">
+												<%= f.label :project_description %>
+												<%= f.text_field :subject , value:"" ,class:"form-control", name:"subject:", id:"contact:subject"%>
 											</div>
 											<div class="col-md-4">
-												<label for="contact_department">Department</label>
-												<select class="form-control pointer" name="contact[department]">
-													<option value="">--- Select ---</option>
-													<option value="Residential">Residential</option>
-													<option value="Commercial&Corporate">Commercial & Corporate</option>
-													<option value="Maintenance">Maintenance</option>
-												</select>
+												<%= f.label :contact_department %>
+												<%= option_for_select["Residential","Commercial&Corporate","Maintenance"]%>
+												# =><option value="">--- Select ---</option>
+												# =><option value="Residential">Residential</option>
+												# =><option value="Commercial&Corporate">Commercial & Corporate</option>
+												# =><option value="Maintenance">Maintenance</option>
+
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-12">
-												<label for="contact:message">Message *</label>
-												<textarea required maxlength="10000" rows="8" class="form-control" name="message:" id="contact:message"></textarea>
+												<%= f.label :contact_message %>
+												<% f.text_area :contact_message ,  maxlength:"10000" ,rows:"8" ,class:"form-control" ,name:"message:" ,id:"contact:message" %>
 											</div>
 									</div>
 									<div class="row">
                                             <div class="col-md-12">
-                                                <label for="contact:attachment">File Attachment</label>
+                                                <%= f.label :contact_attachment %>
                                                 <!-- custom file upload -->
-                                                <input class="custom-file-upload" type="file" id="file" name="attachmentFile:" id="contact:attachment" data-btn-text="Select a File" />
+                                                <%= form.input :attachmentFile , as: :file , type:"file" , id:"file" , name:"attachmentFile" , id:"contact:attachment" , data:"Select a File" %>
                                                 <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
                                             </div>
                                     </div>
@@ -754,69 +754,12 @@
 								</fieldset>
 
 								<div class="row">
-									<div class="col-md-12">
-										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
+									<div class="actions col-md-12">
+              							<%= f.submit "SEND MESSAGE", class:"btn btn-primary" %>
 									</div>
 								</div>
-								<script>
-									$("contact:attachment").change(function() {
-    									var r = new FileReader();
-										r.onload = function(){ alert(r.result); };
-										r.readAsBinaryString(file);
-											});
-								</script>
-								
-								<script>
-			
-								document.addEventListener('DOMContentLoaded', () => {
-								document
-								.getElementById('contactForm')
-								.addEventListener('submit', handleForm);
-							});
-							function handleForm(ev) {
-								ev.preventDefault(); //stop the page reloading
-								//console.dir(ev.target);
-								let fields = ev.target;
-								let fd = new FormData(contactForm);
-
-								//add more things that were not in the form
-								fd.append('api-key', 'myApiKey');
-
-								//look at all the contents
-								for (let key of fd.keys()) {
-								console.log(key, fd.get(key));
-								}
-								let json = convertFD2JSON(fd);
-
-								//send the request with the formdata
-								let url = 'http://localhost:3000/';
-								let h = new Headers();
-								h.append('Content-type', 'application/json');
-
-								let req = new Request(url, {
-								headers: h,
-								body: fd ,
-								method: 'POST',
-								});
-								//console.log(req);
-								fetch(req)
-								.then((res) => res.json())
-								.then((data) => {
-									console.log('Response from server');
-									console.log(data);
-								})
-								.catch(console.warn);
-							}
-
-							function convertFD2JSON(formData) {
-								let obj = {};
-								for (let key of formData.keys()) {
-								obj[key] = formData.get(key);
-								}
-								return JSON.stringify(obj);
-							}
-                </script>
-							</form>
+							<%end%>	
+	
 
 						</div>
 						<!-- /FORM -->
