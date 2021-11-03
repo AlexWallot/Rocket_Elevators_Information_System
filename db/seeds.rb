@@ -69,6 +69,21 @@ userId = 22
 end
 id = 22
 
+# idCounter = 1
+# 100.times do
+#     if Employee.where(id: idCounter).nil?
+#         Employee.create([{
+#             id:idCounter,
+#             first_name:Faker::Name.first_name ,
+#             last_name:Faker::Name.last_name,
+#             title:Faker::Job.position,
+#             email:Faker::Internet.email,
+#             user_id:user_id
+#         }])
+#     end
+#     idCounter = idCounter + 1
+# end
+
 user_id = 22
 79.times do
     Employee.create([{
@@ -82,7 +97,6 @@ user_id = 22
     }])
     id = id + 1
     user_id = user_id + 1
-
 end
 
 
@@ -105,7 +119,7 @@ end
     }])
 end
 
-200.times do
+100.times do
     Address.create([{
         typeAddress: Faker::Address.community,
         status: Faker::Lorem.word,

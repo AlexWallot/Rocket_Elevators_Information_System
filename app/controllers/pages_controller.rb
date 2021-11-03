@@ -7,10 +7,6 @@ class PagesController < ApplicationController
 
   def commercial
   end
-  
-  def contact
-    @contact = Contact.new
-  end
 
   def quotes
    @quote = Quote.new
