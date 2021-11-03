@@ -693,78 +693,77 @@
 							</div><!-- /Alert Mandatory -->
 
 
-							<%= form_for (@contact) do |f| %>
+							<%= form_with url:contact_path, local:true, method: :post do %>
 								<fieldset>
 									<input type="hidden" name="action" value="contact_send" />
 
 									<div class="row">
 											<div class="col-md-4">
-												<%= f.label :Full_Name%>
-												<%= f.text_field :name , value:"", class:"form-control", name:"name:" , id:"contact:name"%>
+												<label for="contact:name">Full Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:name">
 											</div>
 											<div class="col-md-4">
-												<%= f.label :Email%>
-												<%= f.email_field :email, value:"" ,class:"form-control" ,name:"email:", id:"contact:email"%>
+												<label for="contact:email">E-mail Address *</label>
+												<input required type="email" value="" class="form-control" name="contact[email][required]" id="contact:email">
 											</div>
 											<div class="col-md-4">
-												<%= f.label :Phone%>
-												<%= f.text_field :phone .value:"" ,class:"form-control" ,name:"phone:" ,id:"contact:phone"%>
+												<label for="contact:phone">Phone</label>
+												<input type="text" value="" class="form-control" name="contact[phone]" id="contact:phone">
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-4">
-												<%= f.label :Business_Name %>
-												<%= f.text_field :business_Name , value:"", class:"form-control", name:"businessName:", id:"contact:business"%>
+												<label for="contact:name">Business Name *</label>
+												<input required type="text" value="" class="form-control" name="contact[name][required]" id="contact:business">
 											</div>
 											<div class="col-md-8">
-												<%= f.label :project_Name %>
-												<%= f.text_field :project_Name , value:"" , class:"form-control", name:"projectName:", id:"contact:project"%>
+												<label for="contact:name">Project Name *</label>
+												<input required type="name" value="" class="form-control" name="contact[email][required]" id="contact:project">
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-8">
-												<%= f.label :project_description %>
-												<%= f.text_field :subject , value:"" ,class:"form-control", name:"subject:", id:"contact:subject"%>
+												<label for="contact:subject">Project Description *</label>
+												<input required type="text" value="" class="form-control" name="contact[subject][required]" id="contact:subject">
 											</div>
 											<div class="col-md-4">
-												<%= f.label :contact_department %>
-												<%= option_for_select["Residential","Commercial&Corporate","Maintenance"]%>
-												# =><option value="">--- Select ---</option>
-												# =><option value="Residential">Residential</option>
-												# =><option value="Commercial&Corporate">Commercial & Corporate</option>
-												# =><option value="Maintenance">Maintenance</option>
-
+												<label for="contact_department">Department</label>
+												<select class="form-control pointer" name="contact[department]">
+													<option value="">--- Select ---</option>
+													<option value="Marketing">Residential</option>
+													<option value="Webdesign">Commercial & Corporate</option>
+													<option value="Architecture">Maintenance</option>
+												</select>
 											</div>
 									</div>
 									<div class="row">
 											<div class="col-md-12">
-												<%= f.label :contact_message %>
-												<% f.text_area :contact_message ,  maxlength:"10000" ,rows:"8" ,class:"form-control" ,name:"message:" ,id:"contact:message" %>
+												<label for="contact:message">Message *</label>
+												<textarea required maxlength="10000" rows="8" class="form-control" name="contact[message]" id="contact:message"></textarea>
 											</div>
 									</div>
 									<div class="row">
-                                            <div class="col-md-12">
-                                                <%= f.label :contact_attachment %>
-                                                <!-- custom file upload -->
-                                                <%= form.input :attachmentFile , as: :file , type:"file" , id:"file" , name:"attachmentFile" , id:"contact:attachment" , data:"Select a File" %>
-                                                <small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
-                                            </div>
-                                    </div>
+											<div class="col-md-12">
+												<label for="contact:attachment">File Attachment</label>
+
+												<!-- custom file upload -->
+												<input class="custom-file-upload" type="file" id="file" name="contact[attachment]" id="contact:attachment" data-btn-text="Select a File" />
+												<small class="text-muted block">Max file size: 10Mb (zip/pdf/jpg/png)</small>
+
+											</div>
+									</div>
 
 								</fieldset>
 
 								<div class="row">
-									<div class="actions col-md-12">
-              							<%= f.submit "SEND MESSAGE", class:"btn btn-primary" %>
+									<div class="col-md-12">
+										<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> SEND MESSAGE</button>
 									</div>
 								</div>
-							<%end%>	
-	
+							<%end%>
 
 						</div>
 						<!-- /FORM -->
-
-
 						<!-- INFO -->
 						<div class="col-md-4 col-sm-4">
 

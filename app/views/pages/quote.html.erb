@@ -26,19 +26,19 @@
 							<div class="container align-items-center text-center form-check form-check-inline px-5">
 								<%= form_with url:quote_path, class:"type-answer col-sm-12 m-4", local:true, method: :post do %>
 									<label class="checkbox">
-										<input type="radio" name="btn-radio" id="res">
+										<input type="radio" name="type-building" id="res" class="btn-radio" value="Residential">
 										<i name="res"></i> Residential 
 									</label>
 									<label class="checkbox">
-										<input type="radio" name="btn-radio" id="comm">
+										<input type="radio" name="type-building" id="comm" class="btn-radio" value="Commercial">
 										<i></i> Commercial
 									</label>
 									<label class="checkbox">
-										<input type="radio" name="btn-radio" id="corp">
+										<input type="radio" name="type-building" id="corp" class="btn-radio" value="Corporate">
 										<i></i> Corporate
 									</label>
 									<label class="checkbox">
-										<input type="radio" name="btn-radio" id="hyb">
+										<input type="radio" name="type-building" id="hyb" class="btn-radio" value="Hybrid">
 										<i></i> Hybrid 
 									</label>
 								<% end %> 
@@ -49,21 +49,25 @@
 							<div class="row-lg-4 p-3 mt-9">
 								<div class="col-md-12">
 									<%= form_with url:quote_path, id:"fields", local:true, method: :post do %>
-									
+										
 										<div id="filled" class="row align-items-center">
+											<input type="hidden" name="quote[numElevator]" class="num-elevator">
+											<input type="hidden" name="quote[type_building]" class="type-building">
+
+
 											<div class="form-group col-sm-4 py-2 mb-2" id="numApartments">
 												<label>Number of Apartments</label>
-												<input name = "numApartment" type="text" id="input_apartments" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input type="text" id="input_apartments" min="0" name="quote[numApartment]" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 											
 											<div class="form-group col-sm-4 py-2 mb-2" id="numFloorsHyb">
 												<label>Number of Floors<span class="grey text-red"><small> (Excluding Basements)</small></span></label>
-												<input name = "numfloor"type="text" id="input_floorsHyb" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input type="text" id="input_floorsHyb" min="0" name="quote[numFloorHyb]" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numFloorsRes">
 												<label>Number of Floors</label>
-												<input name = "numfloor" type="text" id="input_floorsRes" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input type="text" id="input_floorsRes" min="0" name="quote[numFloor]" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 											
 											<div class="form-group col-sm-4 py-2 mb-2" id="numBasements">
@@ -73,7 +77,7 @@
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numBusinesses">
 												<label>Number of Distinct Businesses</label>
-												<input name="numApartment" type="text" id="input_businesses" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input type="text" id="input_businesses" min="0" name="quote[numBusinessRooms]" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numParking">
@@ -88,12 +92,12 @@
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numCompanies">
 												<label>Number of Separate Tennant Companies</label>
-												<input type="text" id="input_acompanies" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input type="text" id="input_acompanies" min="0" name="quote[numOccupant]" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numOccupants">
 												<label>Number of Occupants Per Floor</label>
-												<input name = "numOccupant" type="text" id="input_occupants" min="0" oninput="validity.valid||(value='');" class="form-control">
+												<input type="text" id="input_occupants" min="0" name="quote[numOccupant]" oninput="validity.valid||(value='');" class="form-control">
 											</div>
 
 											<div class="form-group col-sm-4 py-2 mb-2" id="numHours">
@@ -157,64 +161,9 @@
                         </div>
                       </div>
 										</div>
-<<<<<<< HEAD
-									</form>
-                <script>
-                document.addEventListener('DOMContentLoaded', () => {
-        document
-          .getElementById('fields')
-          .addEventListener('submit', handleForm);
-      });
-      function handleForm(ev) {
-        ev.preventDefault(); //stop the page reloading
-        //console.dir(ev.target);
-        let fields = ev.target;
-        let fd = new FormData(fields);
-
-        //add more things that were not in the form
-        fd.append('api-key', 'myApiKey');
-
-        //look at all the contents
-        for (let key of fd.keys()) {
-          console.log(key, fd.get(key));
-        }
-        let json = convertFD2JSON(fd);
-
-        //send the request with the formdata
-        let url = 'http://localhost:3000/';
-        let h = new Headers();
-        h.append('Content-type', 'application/json');
-
-        let req = new Request(url, {
-          headers: h,
-          body: fd ,
-          method: 'POST',
-        });
-        //console.log(req);
-        fetch(req)
-          .then((res) => res.json())
-          .then((data) => {
-            console.log('Response from server');
-            console.log(data);
-          })
-          .catch(console.warn);
-      }
-
-      function convertFD2JSON(formData) {
-        let obj = {};
-        for (let key of formData.keys()) {
-          obj[key] = formData.get(key);
-        }
-        return JSON.stringify(obj);
-      }
-                
-                </script> 
-							</div><br><hr>
-=======
 
 									<% end %>
 								</div><br><hr>
->>>>>>> c2ccf7d1891144507c5b57cbc1fc7ff4200874b1
 							</div>
 						</div>
           </div>

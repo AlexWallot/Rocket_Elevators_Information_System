@@ -91,4 +91,6 @@ gem 'therubyracer', :platforms => :ruby
 
 gem 'faker'
 
-gem 'pg', '~> 1.2', '>= 1.2.3'
+gem 'pg'
+
+gem 'secondbase'
