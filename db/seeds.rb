@@ -114,14 +114,10 @@ end
     }])
 end
 
-#file = File.join Rails.root, 'db', File.read('./addresses-us-1000.json')
-#data_hash = JSON.parse(file)
-#data_hash_size = data_hash['city'].size
 data_hash = ''
 file = File.join Rails.root, 'db', 'migrate', 'addresses-us-1000.json'
 File.open(file, 'r') do |f|
     data_hash = JSON.parse(f.read)
-    #data_hash_size = data_hash['city'].size
 end
 
 address_id = 0
@@ -140,6 +136,7 @@ address_id = 0
         postalCode: data_hash['addresses'][address_id]['postalCode'],
         #country: Faker::Address.country,
         country: data_hash['addresses'][address_id]['state'],
+        #state: data_hash['addresses'][address_id]['state'],
         notes: Faker::Lorem.paragraph
     }])
     address_id = address_id + 1
