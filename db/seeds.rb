@@ -58,8 +58,6 @@ modelA = ['standard', 'premium', 'excelium'] ;
 statusA = ['online','down','up','offline','maintenance','busy','crowded','empty'] ;
 informationA =['type', 'construction_year', 'elevator_shaft_amount','amount_of_floor','building_status' , 'model','status','number_of_occupants' ] ;
 
-<<<<<<< HEAD
-=======
 id = 1
 100.times do
     random = typeA.sample
@@ -110,7 +108,6 @@ id = 1
     id = id + 1
 end
 
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
 userId = 22
 179.times do
     User.create([{
@@ -121,23 +118,6 @@ userId = 22
     userId+=1
 end
 id = 22
-<<<<<<< HEAD
-=======
-
-# idCounter = 1
-# 100.times do
-#     if Employee.where(id: idCounter).nil?
-#         Employee.create([{
-#             id:idCounter,
-#             first_name:Faker::Name.first_name ,
-#             last_name:Faker::Name.last_name,
-#             title:Faker::Job.position,
-#             email:Faker::Internet.email,
-#             user_id:user_id
-#         }])
-#     end
-#     idCounter = idCounter + 1
-# end
 
 user_id = 22
 79.times do
@@ -153,22 +133,6 @@ user_id = 22
     id = id + 1
     user_id = user_id + 1
 end
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
-
-# idCounter = 1
-# 100.times do
-#     if Employee.where(id: idCounter).nil?
-#         Employee.create([{
-#             id:idCounter,
-#             first_name:Faker::Name.first_name ,
-#             last_name:Faker::Name.last_name,
-#             title:Faker::Job.position,
-#             email:Faker::Internet.email,
-#             user_id:user_id
-#         }])
-#     end
-#     idCounter = idCounter + 1
-# end
 
 user_id = 22
 79.times do
@@ -240,11 +204,7 @@ addressId = 1
 user_id = 101
 100.times do
     Customer.create([{
-<<<<<<< HEAD
-        userId: userId,
-=======
         userId: user_id,
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
         dateCreation: Faker::Date.between(from: '2019-01-01', to: '2021-10-01'),
         compagnyName: Faker::Company.name,
         addressId: addressId,
@@ -280,19 +240,11 @@ end
 
 
 buildingId = 1
-<<<<<<< HEAD
-200.times do
-    BuildingDetail.create([{
-        buildingId:buildingId,
-        informationKey:informationA.sample(random: Random.new(3)) , 
-        value:[Faker::Number.between(from: 1950, to: 2021),typeA.sample(random: Random.new(1)),statusA.sample(random: Random.new(1))]
-=======
 100.times do
     BuildingDetail.create([{
         buildingId:buildingId,
         informationKey:informationA.sample, 
         value:[Faker::Number.between(from: 1950, to: 2021),typeA.sample,statusA.sample]
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
 
 
     }])
@@ -300,15 +252,6 @@ buildingId = 1
     buildingId = buildingId + 1
 end
 
-<<<<<<< HEAD
-buildingId = 1
-employeeId = 22
-200.times do
-    Batterie.create([{
-        buildingId:buildingId,
-        types:typeA.sample(random: Random.new(1)),
-        status:statusA.sample(random: Random.new(1)),
-=======
 building_Id = 1
 employeeId = 1
 100.times do
@@ -316,7 +259,6 @@ employeeId = 1
         buildingId:building_Id,
         types:typeA.sample,
         status:statusA.sample,
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
         employeeId:employeeId,
         dateCommissioning:Faker::Date.between(from: '2018-01-01', to: '2021-11-10'),
         dateLastInspection:Faker::Date.between(from: '2020-01-01', to: '2021-11-10'),
@@ -325,41 +267,11 @@ employeeId = 1
         notes:Faker::Lorem.paragraph(sentence_count: 2)
 
     }])
-<<<<<<< HEAD
-    buildingId = buildingId + 1
-=======
     building_Id = building_Id + 1
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
     employeeId += 1
 end
 
 batteryId = 1
-<<<<<<< HEAD
-200.times do
-    Column.create([{
-        batteryId:batteryId,
-        types:typeB.sample(random: Random.new(1)),
-        numberFloorServed:Faker::Number.number(digits: 2),
-        status: statusA.sample(random: Random.new(1)),
-        information:Faker::Lorem.sentence(word_count: 3),
-        notes:Faker::Lorem.paragraph(sentence_count: 2)
-
-
-
-    }])
-    batteryId = batteryId + 1
-
-end
-columnId = 1
-
-200.times do
-    Elevator.create([{
-        columnId:columnId ,
-        serialNumber: Faker::Barcode.upc_a,
-        model:modelA.sample(random: Random.new(1)),
-        types:typeB.sample(random: Random.new(1)),
-        status: statusA.sample(random: Random.new(1)),
-=======
 compteur = 0
 200.times do
     Column.create([{
@@ -387,20 +299,11 @@ compteur = 0
         model:modelA.sample,
         types:typeB.sample,
         status: statusA.sample,
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
         dateCommissioning:Faker::Date.between(from: '2018-01-01', to: '2021-11-10'),
         dateLastInspection:Faker::Date.between(from: '2020-01-01', to: '2021-11-10'),
         certificateOperations:Faker::IDNumber.valid ,
         information:Faker::Lorem.sentence(word_count: 3),
         notes:Faker::Lorem.paragraph(sentence_count: 2)
-<<<<<<< HEAD
-
-
-    }])
-    columnId = columnId + 1
-end     
-
-=======
     }])
     compteur = compteur + 1
     if compteur == 2
@@ -408,4 +311,3 @@ end
         compteur = 0
     end
 end 
->>>>>>> 05d34e0e8ef989a2ac1c9359701b290bdcbd5f50
